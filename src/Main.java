@@ -6,9 +6,10 @@ public class Main {
 
         // 격투 시작
         Hero.battle(arthas, leona);
+        System.out.println();
+
     }
 }
-
 class Hero {
     // 해당 클래스를 구현하시오.
     String name;
@@ -23,6 +24,9 @@ class Hero {
         // 공격자의 이름으로 펀치 메세지 출력
         System.out.printf("\t%s: %d/30\n", enermy.name, enermy.hp);
         // 상대방의 남은 체력(hp - 10 한)을 알리는 메세지 출력
+        if (enermy.hp <= 0){
+            System.out.println(this.name + "의 승리!");
+        }
     }
 
     static void battle(Hero a, Hero b) {
@@ -49,8 +53,6 @@ class Hero {
             /*딜레이 0.1초 넣기 -> 넣으려면 battle 메서드 안에 throws InterruptedException 추가
             Thread.sleep(100);
             */
-
         }
-
     }
 }
